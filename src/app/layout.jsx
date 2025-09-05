@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="flex flex-col min-h-screen  max-md:mb-[102px]">
         <header>
-          <WrapperNavbar />
+          <Navbar />
         </header>
         <main className="mt-[88px] flex-grow">
           {children}

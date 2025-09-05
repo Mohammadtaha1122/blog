@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 const Navbar = () => {
-  const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const router = useRouter();
 
@@ -15,10 +14,6 @@ const Navbar = () => {
     if (query.trim() !== "") router.push(`/search?query=${query}`);
   }
 
-  useEffect(() => {
-    const currentQuery = searchParams.get("query") || "";
-    setQuery(currentQuery);
-  }, [searchParams]);
 
   return (
     <>
@@ -76,14 +71,14 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <ul className="fixed md:hidden z-10 bottom-0 left-0 right-0 bg-white/80 flex justify-around items-center py-4">
+      <ul className="fixed md:hidden z-10 bottom-0 left-0 right-0 text-lg bg-white/80 flex justify-around items-center py-2">
         <li>
           <Link className="flex flex-col items-center" href={"/blog"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               id="Layer_1"
-              width="30px"
-              height="30px"
+              width="20px"
+              height="20px"
               viewBox="0 0 32 32"
               fill="#000000"
               enableBackground="new 0 0 32 32"
@@ -126,8 +121,8 @@ const Navbar = () => {
               xmlns="http://www.w3.org/2000/svg"
               stroke="#000000"
               strokeWidth="0.5"
-              width="40px"
-              hanging="40px"
+              width="20px"
+              hanging="20px"
             >
               <g id="SVGRepo_bgCarrier" strokeWidth="0.7"></g>
               <g
