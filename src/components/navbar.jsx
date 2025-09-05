@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 const Navbar = () => {
-  const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const router = useRouter();
 
@@ -15,10 +14,6 @@ const Navbar = () => {
     if (query.trim() !== "") router.push(`/search?query=${query}`);
   }
 
-  useEffect(() => {
-    const currentQuery = searchParams.get("query") || "";
-    setQuery(currentQuery);
-  }, [searchParams]);
 
   return (
     <>
