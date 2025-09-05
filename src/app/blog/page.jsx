@@ -37,7 +37,7 @@ const Blog = () => {
           Here are different types of blogs to read.
         </h2>
       </section>
-      <section className="grid grid-cols-3 gap-6 mt-15">
+      <section className="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-6 mt-15">
         {isLoading ? (
           <p className=" text-2xl text-center">loading...</p>
         ) : (
@@ -68,7 +68,7 @@ const Blog = () => {
                 {blog.tag_list.map((tag) => (
                   <span
                     key={tag}
-                    className="bg-sky-600 text-white p-3 rounded-lg"
+                    className="bg-sky-600 text-white p-2 rounded-lg"
                   >
                     {tag}
                   </span>
@@ -80,7 +80,7 @@ const Blog = () => {
                   alt={blog.user.name}
                   width={60}
                   height={60}
-                  className="rounded-full object-cover"
+                  className="rounded-full  object-cover"
                 />
                 <div>
                   <p>{blog.user.name}</p>

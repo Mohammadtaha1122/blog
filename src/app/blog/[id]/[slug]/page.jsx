@@ -60,7 +60,7 @@ const Detail = ({ params }) => {
       </Link>
       {detail.cover_image ? (
         <Image
-          className="mx-auto w-1/2 mb-10"
+          className="mx-auto w-1/2 max-md:w-full mb-10"
           src={detail.cover_image}
           alt={detail.title}
           width={1000}
@@ -68,7 +68,7 @@ const Detail = ({ params }) => {
         />
       ) : (
         <Image
-          className="mx-auto w-1/2 mb-10"
+          className="mx-auto w-1/2 max-md:w-full mb-10"
           src={detail.social_image}
           alt={detail.title}
           width={1000}
@@ -79,7 +79,7 @@ const Detail = ({ params }) => {
         {detail.title}
       </h1>
       <h2>{detail.description}</h2>
-      <div className="flex justify-between px-20 items-center">
+      <div className="flex justify-between px-20 max-md:px-2 max-sm:flex-col gap-5 items-center">
         <div>
           <p className="mt-8 mb-2">tags: </p>
           <div className="flex gap-2 flex-wrap text-sm">

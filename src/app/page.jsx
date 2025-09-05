@@ -30,8 +30,8 @@ export default function Home() {
   return (
     <>
       <div className="bg-blue-400">
-        <section className="flex container justify-between items-center pt-5 py-5 mb-15">
-          <p className="w-[700px] leading-10 text-2xl text-white">
+        <section className="flex max-lg:flex-col container justify-between items-center pt-5 py-5 mb-15">
+          <p className="w-[700px] max-lg:w-full  leading-10 text-2xl text-white max-lg:mb-8">
             Welcome to my blog platform 🚀 Here you can discover the latest
             articles from developers around the world. Explore tutorials, coding
             tips, and insights shared by real devs on Dev.to API. Stay updated
@@ -45,18 +45,26 @@ export default function Home() {
           <h2 className="text-2xl font-semibold">Recent articles:</h2>
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            navigation
             pagination={{ clickable: true }}
             autoplay={{ delay: 8000 }}
-            slidesPerView={2}
-            className="flex overflow-scroll mt-6 gap-6"
+            navigation
+            slidesPerView={1}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              1024: {
+                slidesPerView: 2,
+              },
+            }}
+            className="w-full flex mt-6"
           >
             {recentArticles.map((item) => (
-              <SwiperSlide key={item.id}>
+              <SwiperSlide className="px-2" key={item.id}>
                 <Link href={`/blog/${item.id}/${item.slug}`}>
                   {item.cover_image ? (
                     <Image
-                      className=" mx-auto rounded-2xl"
+                      className="mx-auto w-full rounded-2xl"
                       src={item.cover_image}
                       alt={item.title}
                       width={500}
@@ -64,7 +72,7 @@ export default function Home() {
                     />
                   ) : (
                     <Image
-                      className=" rounded-2xl"
+                      className="mx-auto w-full rounded-2xl"
                       src={item.social_image}
                       alt={item.title}
                       width={500}

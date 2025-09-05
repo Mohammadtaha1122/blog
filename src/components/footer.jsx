@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-sky-100 pt-10 mt-15">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+    <footer className=" bg-sky-100 pt-10 mt-15">
+      <div className=" mx-auto px-6 flex max-md:flex-col justify-between items-center gap-8">
         <Link href={"/"}>
           <Image src={logo} alt="logo" width={100} height={100} />
         </Link>
@@ -45,7 +45,7 @@ const Footer = () => {
         <p className="text-xl font-semibold mb-4">
           Subscribe to our newsletter
         </p>
-        <div className="flex gap-2">
+        <div className="flex max-sm:flex-col gap-2">
           <input
             id="email"
             placeholder="Enter your email..."
